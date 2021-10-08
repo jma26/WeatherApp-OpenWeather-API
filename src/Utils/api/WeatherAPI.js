@@ -3,20 +3,17 @@ import { useState } from 'react';
 const WeatherAPI = () => {
 
   const getWeather = async (location) => {
-    // console.log(location);
-    // try {
-    //   let response = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${location.latitude}&lon=${location.longitude}&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}`, {
-    //     headers: {
-    //       'Accept': 'application/json',
-    //     }
-    //   });
+    try {
+      let response = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${location.latitude}&lon=${location.longitude}&units=imperial&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}`);
 
-    //   if (response) {
-    //     return response.json();
-    //   }
-    // } catch (err) {
-    //   console.error(err);
-    // }
+      let data = await response.json();
+
+      if (data) {
+        return data;
+      }
+    } catch (error) {
+      throw error;
+    }
   }
 
   return {
