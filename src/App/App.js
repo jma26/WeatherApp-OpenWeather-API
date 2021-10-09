@@ -6,7 +6,7 @@ import './App.css';
 
 const App = () => {
   const {location, error} = useCurrentLocation();
-  const [weatherList, setWeatherList] = useState();
+  const [weatherData, setWeatherData] = useState();
 
   const {
     getWeather,
@@ -18,7 +18,7 @@ const App = () => {
       (async () => {
         try {
           let response = await getWeather(location);
-          setWeatherList({
+          setWeatherData({
             ...response
           })
         } catch (error) {
@@ -31,7 +31,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Weather weatherList={weatherList} />
+      <Weather weatherData={weatherData} />
     </div>
   );
 }
