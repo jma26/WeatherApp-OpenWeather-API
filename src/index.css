@@ -1,3 +1,13 @@
+:root {
+  --white: #FFF;
+  --primary: #232E51;
+  --lt-primary: #4E577D;
+  --dk-primary: #000328;
+  --secondary: #FF1F43;
+  --lt-secondary: #FF646E;
+  --dk-secondary: #C4001C;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -6,7 +16,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #232E51;
+  background-color: var(--primary);
 }
 
 code {

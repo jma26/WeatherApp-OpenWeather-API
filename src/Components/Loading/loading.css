@@ -25,7 +25,7 @@
   width: 5px;
   height: 14px;
   border-radius: 20%;
-  background: #fff;
+  background: var(--white);
 }
 
 .Loading__spinner div:nth-child(1) {
