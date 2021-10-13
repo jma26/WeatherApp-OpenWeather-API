@@ -1,3 +1,4 @@
+import TempIcon from './TempIcon';
 import './weather.css';
 
 const CurrentWeather = (props) => {
@@ -5,15 +6,11 @@ const CurrentWeather = (props) => {
 
   return (
     <div className="currentWeather">
-      <img
-        className="currentWeather-icon"
-        src={`http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`}
-        alt={currentWeather.weather[0].description}
+      <TempIcon
+        icon={currentWeather.weather[0].icon}
+        description={currentWeather.weather[0].description}
+        temp={Math.round(`${currentWeather.temp}`)}
       />
-      <div className="currentWeather-info-container">
-        <p className="currentWeather-temp">{Math.round(`${currentWeather.temp}`)} &#176;</p>
-        <p className="currentWeather-description">{currentWeather.weather[0].description}</p>
-      </div>
     </div>
   )
 }

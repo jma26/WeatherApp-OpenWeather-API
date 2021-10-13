@@ -10,29 +10,33 @@
   padding: 1em;
 }
 
+.icon {
+  width: 100%;
+  height: auto;
+}
+
+.description {
+  text-transform: capitalize;
+}
+
+.currentWeather .icon {
+  width: 50%;
+}
+
 .currentWeather {
   display: flex;
   justify-content: space-evenly;
   border-bottom: 1px solid var(--white);
 }
 
-.currentWeather-icon {
-  width: 50%;
-  height: auto;
-}
-
-.currentWeather-info-container {
+.currentWeather .info-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.currentWeather-temp {
+.currentWeather .temp {
   font-size: 4em;
-}
-
-.currentWeather-description {
-  text-transform: capitalize;
 }
 
 .forecastWeather {
@@ -51,5 +55,9 @@
   padding: 1em 0.25em;
   width: 25%;
   text-align: center;
+}
+
+.forecast-card .description {
+  display: none;
 }
 
