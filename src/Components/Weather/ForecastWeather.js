@@ -8,8 +8,13 @@ const ForecastWeather = (props) => {
           props.forecastWeather.map((weather, index) => {
             return (
               <div className="forecast-card" key={index}>
+                <p className="forecast-day">
+                  {
+                    new Date(weather.dt * 1000).toLocaleDateString('en-US', { weekday: 'long' }).substring(0, 3)
+                  }
+                </p>
                 <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`} alt={weather.weather[0].description} />
-                <p>{weather.temp.min} - {weather.temp.max}</p>
+                <p className="forecast-temp-range">{Math.round(`${weather.temp.min}`)}&#176; - {Math.round(`${weather.temp.max}`)}&#176;</p>
               </div>
             )
           })

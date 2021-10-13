@@ -11,7 +11,7 @@ const CurrentWeather = (props) => {
         alt={currentWeather.weather[0].description}
       />
       <div className="currentWeather-info-container">
-        <p className="currentWeather-temp">{currentWeather.temp} &#176;</p>
+        <p className="currentWeather-temp">{Math.round(`${currentWeather.temp}`)} &#176;</p>
         <p className="currentWeather-description">{currentWeather.weather[0].description}</p>
       </div>
     </div>

@@ -12,7 +12,7 @@
 
 .currentWeather {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   border-bottom: 1px solid var(--white);
 }
 
@@ -28,7 +28,7 @@
 }
 
 .currentWeather-temp {
-  font-size: 3em;
+  font-size: 4em;
 }
 
 .currentWeather-description {
@@ -42,10 +42,14 @@
 .forecast-cardList {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 0.5em;
 }
 
 .forecast-card {
+  background-color: var(--lt-primary);
   flex-basis: 25%;
+  padding: 1em 0.25em;
   width: 25%;
+  text-align: center;
 }
 
