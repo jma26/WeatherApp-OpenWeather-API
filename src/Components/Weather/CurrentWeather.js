@@ -1,19 +1,20 @@
-import { useEffect } from 'react';
+import './weather.css';
 
 const CurrentWeather = (props) => {
-  const { weather } = props.weather
-
-  // useEffect(() => {
-  //   console.log(props.weather);
-  //   if (props.currentWeather) {
-  //     console.log('Whether data is populated in child');
-  //   }
-  // }, [props])
+  const {currentWeather} = props;
 
   return (
-    <>
-      <h1>Hello World</h1>
-    </>
+    <div className="currentWeather">
+      <img
+        className="currentWeather-icon"
+        src={`http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`}
+        alt={currentWeather.weather[0].description}
+      />
+      <div className="currentWeather-info-container">
+        <p className="currentWeather-temp">{currentWeather.temp} &#176;</p>
+        <p className="currentWeather-description">{currentWeather.weather[0].description}</p>
+      </div>
+    </div>
   )
 }
 

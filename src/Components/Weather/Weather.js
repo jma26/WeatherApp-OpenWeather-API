@@ -17,11 +17,15 @@ const Weather = (props) => {
     <>
     {
       !weatherData ? <Loading /> : (
-        <>
-          <Header timezone={weatherData.timezone} date={weatherData.timezone_offset} />
-          <CurrentWeather weather={weatherData.current} />
-          <ForecastWeather weather={weatherData.daily} />
-        </>
+        <div className="weather">
+          <Header
+            timezone={weatherData.timezone}
+            date={weatherData.current.dt}
+            offset={weatherData.timezone_offset}
+          />
+          <CurrentWeather currentWeather={weatherData.current} />
+          <ForecastWeather forecastWeather={weatherData.daily} />
+        </div>
       )
     }
     </>
