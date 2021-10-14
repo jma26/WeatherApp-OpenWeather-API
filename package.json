@@ -1,6 +1,6 @@
 {
   "name": "weather-api-test",
-  "homepage": "https://jma26.github.io/WeatherApp-OpenWeather-API",
+  "homepage": "http://jma26.github.io/WeatherApp-OpenWeather-API",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

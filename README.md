@@ -14,6 +14,14 @@ You will also see any lint errors in the console.
 
 - In order to properly run, please generate your own API key for OpenWeather API
 
+## Screenshot
+
+![](./images/screenshot.PNG)
+
+## Links
+- [Solution URL](https://github.com/jma26/WeatherApp-OpenWeather-API)
+- [Live URL](https://jma26.github.io/WeatherApp-OpenWeather-API/)
+
 ## Technologies
 - React.js (v17.0.2)
 - Node.js (v14.16.0)
