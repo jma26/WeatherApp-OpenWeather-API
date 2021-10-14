@@ -14,6 +14,7 @@ const TempIcon = (props) => {
           alt={description}
         />
         <div className="temp-container">
+          <h4 className="temp-header">Current Temperature</h4>
           <p className="temp">{temp} &#176;</p>
           <p className="description">{description}</p>
         </div>

@@ -19,6 +19,10 @@
   text-transform: capitalize;
 }
 
+.temp-header {
+  display: none;
+}
+
 .currentWeather .icon {
   width: 50%;
 }
@@ -73,6 +77,19 @@
   .weather {
     max-width: 1000px;
     width: 100%;
+  }
+
+  .currentWeather .temp {
+    font-size: 8em;
+  }
+
+  .currentWeather .temp-header {
+    display: block;
+    font-size: 2em;
+  }
+
+  .currentWeather .description {
+    font-size: 2em;
   }
 
   .forecast-cardList {
