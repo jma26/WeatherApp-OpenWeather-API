@@ -29,7 +29,7 @@
   border-bottom: 1px solid var(--white);
 }
 
-.currentWeather .info-container {
+.currentWeather .temp-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,7 +57,90 @@
   text-align: center;
 }
 
+.forecast-card .date {
+  display: none;
+}
+
 .forecast-card .description {
   display: none;
+}
+
+.info-container {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .weather {
+    max-width: 1000px;
+    width: 100%;
+  }
+
+  .forecast-cardList {
+    flex-direction: column;
+  }
+
+  .forecast-card {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 100%;
+    padding: 0.5em 2.5em;
+    width: 100%;
+    text-align: initial;
+  }
+
+  .forecast-card .date-container {
+    width: 15%;
+    flex-basis: 15%;
+  }
+
+  .forecast-card .date-container > * {
+    /* font-size: 1.25em; */
+  }
+
+  .forecast-card .date {
+    display: block;
+    margin-top: 0.25em;
+  }
+
+  .forecast-card .temp-container {
+    /* margin-left: auto; */
+    width: 10%;
+  }
+
+  .forecast-card .temp {
+    display: none;
+  }
+
+  .forecast-card .description {
+    display: block;
+  }
+
+  .forecast-card .icon {
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .forecast-card .info-container {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+
+  .forecast-card .info-container > * {
+    /* font-size: 1.25em; */
+  }
+
+  .forecast-card .info-container .info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 6em;
+  }
+
+  .forecast-card .info-prop {
+    margin-top: 0.25em;
+  }
 }
 
