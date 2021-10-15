@@ -2,7 +2,7 @@ const WeatherAPI = () => {
 
   const getGeoWeather = async (location) => {
     try {
-      let response = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${location.latitude}&lon=${location.longitude}&units=imperial&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}`);
+      let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${location.latitude}&lon=${location.longitude}&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}`);
 
       let data = await response.json();
 
@@ -16,7 +16,7 @@ const WeatherAPI = () => {
 
   const getCityWeather = async (city) => {
     try {
-      let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}}`)
+      let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}`)
 
       let data = await response.json();
 
