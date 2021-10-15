@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import Header from '../Header/Header';
-import CurrentWeather from './CurrentWeather';
-import ForecastWeather from './ForecastWeather';
+import WeatherTop from './WeatherTop';
 import Loading from '../Loading/Loading';
 import { useEffect } from 'react';
+import './weather.css';
 
 const Weather = (props) => {
   const [weather, setWeather] = useState(props.weatherData);
@@ -14,21 +13,23 @@ const Weather = (props) => {
   }, [weather])
 
   return (
-    <>
+    <main className="weather">
     {
       !weatherData ? <Loading /> : (
-        <div className="weather">
-          <Header
-            timezone={weatherData.timezone}
-            date={weatherData.current.dt}
-            offset={weatherData.timezone_offset}
-          />
-          <CurrentWeather currentWeather={weatherData.current} />
-          <ForecastWeather forecastWeather={weatherData.daily} />
-        </div>
+        <WeatherTop
+          city={weatherData.name}
+          country={weatherData.sys.country}
+          weatherDescription={weatherData.weather[0].description}
+          weatherMain={weatherData.weather[0].main}
+          feelsLike={weatherData.main.feels_like}
+          currTemp={weatherData.main.temp}
+          minTemp={weatherData.main.temp_min}
+          maxTemp={weatherData.main.temp_max}
+          icon={weatherData.weather[0].icon}
+        />
       )
     }
-    </>
+    </main>
   )
 }
 

@@ -13,11 +13,6 @@ const TempIcon = (props) => {
           src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
           alt={description}
         />
-        <div className="temp-container">
-          <h4 className="temp-header">Current Temperature</h4>
-          <p className="temp">{temp} &#176;</p>
-          <p className="description">{description}</p>
-        </div>
       </>
     )
   } else {

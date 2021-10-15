@@ -1,5 +1,6 @@
 .search-form {
-  margin: 2em 0;
+  margin: 2em auto;
+  padding: 0 2em;
 }
 
 .search-input {
