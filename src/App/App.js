@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import useCurrentLocation from '../Hooks/useCurrentLocation';
+import Header from '../Components/Header/Header';
+import Search from '../Components/Search/Search';
 import WeatherAPI from '../Utils/api/WeatherAPI';
 import Weather from '../Components/Weather/Weather';
 import './App.css';
@@ -9,7 +11,7 @@ const App = () => {
   const [weatherData, setWeatherData] = useState();
 
   const {
-    getWeather,
+    getGeoWeather,
   } = WeatherAPI();
 
   useEffect(() => {
@@ -17,7 +19,7 @@ const App = () => {
     if (location) {
       (async () => {
         try {
-          let response = await getWeather(location);
+          let response = await getGeoWeather(location);
           setWeatherData({
             ...response
           })
@@ -30,9 +32,11 @@ const App = () => {
   }, [location])
 
   return (
-    <div className="App">
+    <article className="App">
+      <Header />
+      <Search />
       <Weather weatherData={weatherData} />
-    </div>
+    </article>
   );
 }
 
