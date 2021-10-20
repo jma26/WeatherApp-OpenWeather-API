@@ -82,11 +82,13 @@
 }
 
 .weatherBottom {
+  border-top: 2px solid var(--white);
   color: var(--white);
   display: grid;
   gap: 1em;
   grid-template: repeat(3, auto) / repeat(2, auto);
   margin-top: 2rem;
+  padding-top: 2rem;
   width: 100%;
 }
 
