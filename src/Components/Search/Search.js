@@ -1,36 +1,20 @@
-import { useState, useEffect } from 'react';
-import WeatherAPI from '../../Utils/api/WeatherAPI';
+import { useState } from 'react';
 import './search.css';
 
-const Search = () => {
-  const [inputValue, setInputValue] = useState('');
-
+const Search = (props) => {
   const {
-    getCityWeather,
-  } = WeatherAPI();
-
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-  }
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    try {
-      let response = await getCityWeather(inputValue);
-      console.log(response);
-    } catch (error) {
-      throw error;
-    }
-  }
+    inputValue,
+    onSubmit,
+    onInputChange,
+  } = props;
 
   return (
-    <form className="search-form" onSubmit={handleSubmit}>
+    <form className="search-form" onSubmit={(event) => onSubmit(event)}>
       <input
         className="search-input"
         type="text"
         placeholder="Search by City"
-        onChange={handleInputChange}
+        onChange={onInputChange}
         value={inputValue}
       />
     </form>

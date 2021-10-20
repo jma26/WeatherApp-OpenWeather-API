@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import WeatherAPI from '../Utils/api/WeatherAPI';
 
 const useCurrentLocation = () => {
 

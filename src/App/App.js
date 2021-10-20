@@ -8,10 +8,12 @@ import './App.css';
 
 const App = () => {
   const {location, error} = useCurrentLocation();
+  const [inputValue, setInputValue] = useState('');
   const [weatherData, setWeatherData] = useState();
 
   const {
     getGeoWeather,
+    getCityWeather
   } = WeatherAPI();
 
   useEffect(() => {
@@ -31,10 +33,35 @@ const App = () => {
 
   }, [location])
 
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  }
+
+  const handleSubmit = async (event) => {
+    console.log(inputValue);
+    event.preventDefault();
+
+    try {
+      let response = await getCityWeather(inputValue);
+      if (response) {
+        setWeatherData({
+          ...response
+        });
+      }
+      
+    } catch (error) {
+      throw error;
+    }
+  }
+
   return (
     <article className="App">
       <Header />
-      <Search />
+      <Search
+        inputValue={inputValue}
+        onInputChange={handleInputChange}
+        onSubmit={handleSubmit}
+      />
       <Weather weatherData={weatherData} />
     </article>
   );
