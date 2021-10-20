@@ -26,3 +26,7 @@ You will also see any lint errors in the console.
 - React.js (v17.0.2)
 - Node.js (v14.16.0)
 - [OpenWeather API](https://openweathermap.org/)
+
+## Continued Development
+- Toggle feature between imperial and metric system
+- Background color changes depending on weather description + icon
