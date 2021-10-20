@@ -15,16 +15,16 @@ const WeatherTop = (props) => {
     <div className="weatherTop">
       <h2 className="date">{city}, {country}</h2>
       <div className="temp-container">
-        <h3 className="current-temp">{currTemp} &#176;</h3>
+        <h3 className="current-temp">{currTemp} &#176;C</h3>
         <p className="min-temp">
-          {minTemp} &#176;
+          {minTemp} &#176;C
           <span>Min</span>
         </p>
         <p className="max-temp">
-          {maxTemp} &#176;
+          {maxTemp} &#176;C
           <span>Max</span>
         </p>
-        <p className="feelslike-temp">Feels like {feelsLike} &#176;</p>
+        <p className="feelslike-temp">Feels like {feelsLike} &#176;C</p>
       </div>
       <div className="description-container">
         <h3 className="main">{weatherMain}</h3>

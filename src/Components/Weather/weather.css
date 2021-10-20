@@ -1,17 +1,17 @@
 .weather {
   display: grid;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 400px;
+  padding: 0 2em;
 }
 
 /* Top Weather Section */
 .weatherTop {
   color: var(--white);
   display: grid;
-  grid-template: 1fr 1fr / 2fr 1fr;
+  grid-template: 1fr auto / 2fr 1fr;
   height: auto;
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 2em;
   position: relative;
   width: 100%;
 }
@@ -79,4 +79,23 @@
 .icon {
   width: 100%;
   height: auto;
+}
+
+.weatherBottom {
+  color: var(--white);
+  display: grid;
+  gap: 1em;
+  grid-template: repeat(3, auto) / repeat(2, auto);
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-info span {
+  font-weight: bold;
+  font-size: 1.5em;
 }
