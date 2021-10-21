@@ -21,6 +21,20 @@
   grid-column: 1/2;
 }
 
+.toggle--btn {
+  background-color: var(--secondary);
+  border: 1px solid var(--white);
+  border-radius: 1em;
+  color: var(--white);
+  font-size: 1.2em;
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+
+.toggle--btn:hover {
+  cursor: pointer;
+}
+
 .temp-container {
   display: grid;
   grid-row: 1/2;

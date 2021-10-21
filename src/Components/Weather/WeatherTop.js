@@ -51,7 +51,7 @@ const WeatherTop = (props) => {
     <div className="weatherTop">
       <h2 className="date">{city}, {country}</h2>
       <button 
-        className="metric__toggle--btn"
+        className="toggle--btn"
         aria-label="Toggle Imperial and Metric systems"
         onClick={() => onToggle(!boolean)}
       >
