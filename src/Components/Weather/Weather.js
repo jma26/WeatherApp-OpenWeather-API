@@ -10,6 +10,11 @@ const Weather = (props) => {
   const [boolean, setBoolean] = useState(true);
 
   const toggleBoolean = (bool) => {
+    if (bool) {
+      setMeasurement('Metric');
+    } else {
+      setMeasurement('Imperial');
+    }
     setBoolean(bool)
   }
 
