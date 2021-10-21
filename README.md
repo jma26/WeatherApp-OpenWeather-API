@@ -28,6 +28,6 @@ You will also see any lint errors in the console.
 - [OpenWeather API](https://openweathermap.org/)
 
 ## Continued Development
-- Toggle feature between imperial and metric system
+~~- Toggle feature between imperial and metric system~~
 - Background color changes depending on weather description + icon
 ~~- Error handling + component~~
