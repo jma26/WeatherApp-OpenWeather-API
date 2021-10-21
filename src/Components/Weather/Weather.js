@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import WeatherTop from './WeatherTop';
 import WeatherBottom from './WeatherBottom';
 import Loading from '../Loading/Loading';
@@ -5,6 +6,12 @@ import './weather.css';
 
 const Weather = (props) => {
   const {weatherData} = props;
+  const [measurement, setMeasurement] = useState('Metric');
+  const [boolean, setBoolean] = useState(true);
+
+  const toggleBoolean = (bool) => {
+    setBoolean(bool)
+  }
 
   return (
     <main className="weather">
@@ -21,6 +28,9 @@ const Weather = (props) => {
             minTemp={weatherData.main.temp_min}
             maxTemp={weatherData.main.temp_max}
             icon={weatherData.weather[0].icon}
+            measurement={measurement}
+            boolean={boolean}
+            onToggle={toggleBoolean}
           />
           <WeatherBottom
             humidity={weatherData.main.humidity}
@@ -29,6 +39,8 @@ const Weather = (props) => {
             sunrise={weatherData.sys.sunrise}
             sunset={weatherData.sys.sunset}
             timezone={weatherData.timezone}
+            boolean={boolean}
+            onToggle={toggleBoolean}
           />
         </>
       )

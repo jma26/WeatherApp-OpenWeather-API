@@ -11,10 +11,11 @@ const WeatherTop = (props) => {
     maxTemp,
     weatherMain,
     weatherDescription,
+    measurement,
+    boolean,
+    onToggle
   } = props;
 
-  const [measurement, setMeasurement] = useState('Metric');
-  const [boolean, setBoolean] = useState(true);
   const [temperature, setTemperature] = useState({
     currTemp,
     minTemp,
@@ -23,11 +24,6 @@ const WeatherTop = (props) => {
   });
   
   useEffect(() => {
-    if (boolean) {
-      setMeasurement('Metric');
-    } else {
-      setMeasurement('Imperial');
-    }
     temperatureConversion();
   }, [boolean])
 
@@ -57,7 +53,7 @@ const WeatherTop = (props) => {
       <button 
         className="metric__toggle--btn"
         aria-label="Toggle Imperial and Metric systems"
-        onClick={() => setBoolean(!boolean)}
+        onClick={() => onToggle(!boolean)}
       >
         {measurement}
       </button>
