@@ -16,7 +16,7 @@ const Weather = (props) => {
             country={weatherData.sys.country}
             weatherDescription={weatherData.weather[0].description}
             weatherMain={weatherData.weather[0].main}
-            feelsLike={weatherData.main.feels_like}
+            feelsLikeTemp={weatherData.main.feels_like}
             currTemp={weatherData.main.temp}
             minTemp={weatherData.main.temp_min}
             maxTemp={weatherData.main.temp_max}
