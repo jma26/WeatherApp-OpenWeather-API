@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import useCurrentLocation from '../Hooks/useCurrentLocation';
+import Error from '../Components/Error/Error';
 import Header from '../Components/Header/Header';
 import Search from '../Components/Search/Search';
 import WeatherAPI from '../Utils/api/WeatherAPI';
@@ -7,9 +8,10 @@ import Weather from '../Components/Weather/Weather';
 import './App.css';
 
 const App = () => {
-  const {location, error} = useCurrentLocation();
+  const {location} = useCurrentLocation();
   const [inputValue, setInputValue] = useState('');
   const [weatherData, setWeatherData] = useState();
+  const [error, setError] = useState(null);
 
   const {
     getGeoWeather,
@@ -38,20 +40,25 @@ const App = () => {
   }
 
   const handleSubmit = async (event) => {
-    console.log(inputValue);
     event.preventDefault();
 
     try {
       let response = await getCityWeather(inputValue);
-      if (response) {
+      if (response.cod === 200) {
         setWeatherData({
           ...response
         });
+        setError(null);
+      } else {
+        setError({
+          ...response
+        })
       }
       
     } catch (error) {
       throw error;
     }
+    setInputValue('');
   }
 
   return (
@@ -62,7 +69,10 @@ const App = () => {
         onInputChange={handleInputChange}
         onSubmit={handleSubmit}
       />
-      <Weather weatherData={weatherData} />
+      {
+        error ? <Error message={error.message} cod={error.cod} /> : 
+                <Weather weatherData={weatherData} />
+      }
     </article>
   );
 }
