@@ -1,17 +1,10 @@
-import { useState } from 'react';
 import WeatherTop from './WeatherTop';
 import WeatherBottom from './WeatherBottom';
 import Loading from '../Loading/Loading';
-import { useEffect } from 'react';
 import './weather.css';
 
 const Weather = (props) => {
-  const [weather, setWeather] = useState(props.weatherData);
   const {weatherData} = props;
-
-  useEffect(() => {
-    setWeather(weather);
-  }, [weather])
 
   return (
     <main className="weather">
